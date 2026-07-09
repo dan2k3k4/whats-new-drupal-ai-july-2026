@@ -1,0 +1,7 @@
+name: 'Node Exclude By Region'
+type: module
+description: 'Display or hide a node based on the region.'
+core_version_requirement: ^10 || ^11
+package: 'Custom'
+dependencies:
+  - drupal:node

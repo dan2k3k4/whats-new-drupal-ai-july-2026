@@ -1,0 +1,8 @@
+<section class="dw-cta">
+  <svg class="dw-cta__wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0,26 C240,52 480,0 720,20 C960,40 1200,6 1440,30 L1440,0 L0,0 Z" fill="currentColor"/></svg>
+  <div class="dw-cta__inner">
+    <h2 class="dw-cta__heading">{{ heading }}</h2>
+    {% if text %}<p class="dw-cta__text">{{ text }}</p>{% endif %}
+    <a class="dw-cta__button" href="{{ cta_url }}">{{ cta_text }}</a>
+  </div>
+</section>

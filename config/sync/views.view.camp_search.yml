@@ -1,0 +1,86 @@
+uuid: c1097541-5120-414d-a80a-372a174d3ed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.driftwood_content
+  module:
+    - search_api
+id: camp_search
+label: 'Camp search'
+module: views
+description: 'Semantic search over the camp programme.'
+tag: ''
+base_table: search_api_index_driftwood_content
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'Search the programme'
+      pager:
+        type: some
+        options:
+          items_per_page: 10
+      access:
+        type: none
+      cache:
+        type: search_api_none
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
+          empty: true
+          content: 'No sessions matched — try describing what you want to learn.'
+      filters:
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_driftwood_content
+          field: search_api_fulltext
+          plugin_id: search_api_fulltext
+          operator: or
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: 'What do you want to learn?'
+            identifier: keys
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              session: teaser
+              speaker: teaser
+      use_ajax: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.driftwood_content'
+        - 'search_api_list:driftwood_content'
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: search
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+      tags:
+        - 'config:search_api.index.driftwood_content'
+        - 'search_api_list:driftwood_content'

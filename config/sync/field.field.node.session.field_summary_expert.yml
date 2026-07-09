@@ -1,0 +1,22 @@
+uuid: aa8da287-3268-40ea-b902-e663ffb84220
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary_expert
+    - node.type.session
+  module:
+    - text
+id: node.session.field_summary_expert
+field_name: field_summary_expert
+entity_type: node
+bundle: session
+label: 'For experts'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

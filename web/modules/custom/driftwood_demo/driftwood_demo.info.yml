@@ -1,0 +1,5 @@
+name: Driftwood Demo
+type: module
+description: 'Display tweaks for the Driftwood TechCamp demo site.'
+package: Custom
+core_version_requirement: ^11

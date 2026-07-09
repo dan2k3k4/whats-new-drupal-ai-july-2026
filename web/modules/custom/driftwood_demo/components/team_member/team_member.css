@@ -1,0 +1,52 @@
+.dw-team-member {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  max-width: 46rem;
+  margin: 1rem auto;
+}
+.dw-team-member__avatar {
+  flex: 0 0 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  background: var(--dw-pine, #173b3f);
+  color: var(--dw-sand, #f2ead9);
+  font-family: var(--dw-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+/* Cycle avatar tones so a stacked team reads varied without config. */
+.dw-team-member:nth-of-type(3n+2) .dw-team-member__avatar {
+  background: var(--dw-ember, #e4572e);
+  color: #fff;
+}
+.dw-team-member:nth-of-type(3n) .dw-team-member__avatar {
+  background: var(--dw-sand, #f2ead9);
+  color: var(--dw-pine, #173b3f);
+  border: 2px solid var(--dw-pine, #173b3f);
+}
+.dw-team-member__name {
+  margin: 0;
+  font-family: var(--dw-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--dw-pine, #173b3f);
+}
+.dw-team-member__role {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dw-ember, #e4572e);
+}
+.dw-team-member__bio {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--dw-ink, #26221c);
+}

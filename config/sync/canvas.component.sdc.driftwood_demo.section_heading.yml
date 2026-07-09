@@ -1,0 +1,73 @@
+uuid: 53bd93a3-8142-4d24-b86e-eb68267e4ac1
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+active_version: 2512cdde876b2441
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        kicker:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'The programme'
+          expression: ℹ︎string␟value
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'What happens at camp'
+          expression: ℹ︎string␟value
+        lead:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Forty sessions across five tracks, from beginner-friendly talks to expert deep dives.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+  0606ceacb0192c28:
+    settings:
+      prop_field_definitions:
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'What happens at camp'
+          expression: ℹ︎string␟value
+        lead:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Forty sessions across five tracks, from beginner-friendly talks to expert deep dives.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Section heading'
+id: sdc.driftwood_demo.section_heading
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:section_heading'

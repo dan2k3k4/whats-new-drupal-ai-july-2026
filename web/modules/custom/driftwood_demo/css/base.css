@@ -1,0 +1,11 @@
+/* Driftwood design tokens + display face. Components fall back to these
+   values inline, so they degrade fine if this file is ever missing. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,900&display=swap');
+
+:root {
+  --dw-pine: #173b3f;    /* deep lake/pine teal */
+  --dw-sand: #f2ead9;    /* driftwood sand */
+  --dw-ember: #e4572e;   /* campfire ember — the only hot accent */
+  --dw-ink: #26221c;     /* bark ink */
+  --dw-display: 'Fraunces', Georgia, serif;
+}

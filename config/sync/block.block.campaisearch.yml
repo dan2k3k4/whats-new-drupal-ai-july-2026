@@ -1,0 +1,73 @@
+uuid: ab6a075f-562f-4e4e-bc50-cb741850cffe
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search_block
+    - system
+  theme:
+    - olivero
+id: campaisearch
+theme: olivero
+region: content_above
+weight: 0
+provider: null
+plugin: ai_search_block
+settings:
+  id: ai_search_block
+  label: 'Ask the programme'
+  label_display: visible
+  provider: ai_search_block
+  input_field: textfield
+  submit_on_enter: true
+  clear_after_search: false
+  scroll_after_search: false
+  placeholder: 'Ask about talks, workshops, speakers…'
+  submit_text: 'Ask the camp'
+  loading_text: 'Checking the programme…'
+  suffix_text: 'AI-generated answer, grounded in the camp programme.'
+  stream: true
+  database: driftwood_content
+  score_threshold: 0.2
+  min_results: 1
+  no_results_message: 'Sorry we have not found the content you were looking for. Please reformulate your question?'
+  max_results: 20
+  render_mode: node
+  rendered_view_mode: full
+  llm_temp: 0.5
+  llm_model: amazeeio__claude-4-6-sonnet
+  aggregated_llm: |-
+    PERSONA:
+    You are the programme assistant for Driftwood TechCamp 2026, a friendly lakeside tech camp. Warm, plain-spoken, honest — like a good camp counsellor. ALWAYS RESPOND IN HTML.
+
+    INSTRUCTIONS:
+    Answer the question (see QUESTION) using only the articles below (see ARTICLES). Never invent sessions, times or speakers. Always use the EXACT session titles as written in the articles — never paraphrase a title. Mention session titles, rooms and times when relevant, and link to the session using its ENTITY_URL in an <a> element. If the articles do not answer the question, say so briefly and suggest rephrasing. No pleasantries, no repeating the question. Use simple HTML: <p>, <ul>, <li>, <b>, <a>.
+
+    QUESTION:
+    [question]
+
+    ARTICLES:
+    [entity]
+  access_check: 'false'
+  context_threshold: 0.1
+  block_enabled: false
+  block_words: prompt
+  block_response: 'This question contained blocked words.'
+  enable_prefix: false
+  prefix_template: ''
+  enable_reranking: false
+  rerank_method: bi_encoder
+  rerank_candidate_count: 50
+  rerank_embedding_model: null
+  rerank_query_template: ''
+  rerank_pair_template: ''
+  enable_database_results: 0
+  database_results_view: ''
+  animate_placeholder: true
+  response_target_id: ''
+  textarea_rows: 3
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

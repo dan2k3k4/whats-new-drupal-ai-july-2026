@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'CTA banner'
+description: 'Deep-teal closing banner with heading, text and one ember button. Use exactly once, at the bottom of the page.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - heading
+    - cta_text
+    - cta_url
+  properties:
+    heading:
+      type: string
+      title: Heading
+      examples:
+        - 'Pack your laptop. We''ll bring the lake.'
+    text:
+      type: string
+      title: Text
+      examples:
+        - 'Tickets are limited to keep the camp feeling like a camp.'
+    cta_text:
+      type: string
+      title: 'Button text'
+      examples:
+        - 'Browse the programme'
+    cta_url:
+      type: string
+      title: 'Button URL'
+      format: uri-reference
+      examples:
+        - '/search'

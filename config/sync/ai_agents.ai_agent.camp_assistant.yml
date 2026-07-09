@@ -1,0 +1,47 @@
+uuid: 07ececd2-3ec1-4368-98d7-28b402fbda63
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: camp_assistant
+label: 'Camp programme assistant'
+description: 'Answers questions about the Driftwood TechCamp programme using the vector index.'
+system_prompt: |-
+  You are the friendly programme assistant for Driftwood TechCamp 2026, a three-day lakeside tech camp (16-18 September 2026) with talks and workshops on AI, DevOps, frontend, backend and open source community topics.
+
+  Always use the rag_search tool to look up sessions and speakers before answering. Base answers only on what the search returns — never invent sessions, times or speakers. Mention session titles, rooms and times when relevant. If the search returns nothing useful, say so and suggest rephrasing.
+
+  Keep answers short, warm and practical, like a helpful camp counsellor.
+secured_system_prompt: '[ai_agent:agent_instructions]'
+tools:
+  'ai_search:rag_search': true
+tool_settings: {  }
+orchestration_agent: true
+triage_agent: false
+max_loops: 3
+max_loops_message: null
+default_information_tools: null
+tool_usage_limits:
+  'ai_search:rag_search':
+    index:
+      values:
+        - driftwood_content
+      action: force_value
+      hide_property: 1
+    amount:
+      values:
+        - 8
+      action: force_value
+      hide_property: 1
+    min_score:
+      values:
+        - 0.2
+      action: force_value
+      hide_property: 1
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''

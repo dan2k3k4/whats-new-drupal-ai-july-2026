@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Section heading'
+description: 'Centered section heading with kicker (eyebrow), optional lead text and a small waterline motif. Use to introduce each section.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    kicker:
+      type: string
+      title: Kicker
+      description: 'Short uppercase eyebrow above the heading, 1–3 words.'
+      examples:
+        - 'The programme'
+    heading:
+      type: string
+      title: Heading
+      examples:
+        - 'What happens at camp'
+    lead:
+      type: string
+      title: 'Lead text'
+      examples:
+        - 'Forty sessions across five tracks, from beginner-friendly talks to expert deep dives.'

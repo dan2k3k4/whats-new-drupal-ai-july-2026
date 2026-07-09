@@ -1,0 +1,9 @@
+uuid: 2989dca8-a10d-40a0-a98a-953cf5a411d9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Experience level'
+vid: level
+description: null
+weight: 0
+new_revision: false

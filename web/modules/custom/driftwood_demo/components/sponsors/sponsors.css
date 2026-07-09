@@ -1,0 +1,37 @@
+.dw-sponsors {
+  margin: 3.5rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.dw-sponsors__heading {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dw-ember, #e4572e);
+}
+.dw-sponsors__intro {
+  margin: 0 auto 1.5rem;
+  max-width: 44ch;
+  color: #58524a;
+}
+.dw-sponsors__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dw-sponsors__mark {
+  padding: 0.6rem 1.3rem;
+  border-radius: 0.5rem;
+  background: var(--dw-sand, #f2ead9);
+  color: var(--dw-pine, #173b3f);
+  font-family: var(--dw-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}

@@ -1,0 +1,6 @@
+<div class="dw-section-heading">
+  {% if kicker %}<span class="dw-section-heading__kicker">{{ kicker }}</span>{% endif %}
+  <h2 class="dw-section-heading__heading">{{ heading }}</h2>
+  <svg class="dw-section-heading__wave" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 8 C 12 2, 22 2, 32 8 S 52 14, 62 8 S 82 2, 92 8 S 112 14, 118 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+  {% if lead %}<p class="dw-section-heading__lead">{{ lead }}</p>{% endif %}
+</div>

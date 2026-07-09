@@ -1,0 +1,9 @@
+<section class="dw-sponsors">
+  <h2 class="dw-sponsors__heading">{{ heading }}</h2>
+  {% if intro %}<p class="dw-sponsors__intro">{{ intro }}</p>{% endif %}
+  <ul class="dw-sponsors__list">
+    {% for sponsor in [sponsor1, sponsor2, sponsor3, sponsor4, sponsor5, sponsor6] %}
+      {% if sponsor %}<li class="dw-sponsors__mark">{{ sponsor }}</li>{% endif %}
+    {% endfor %}
+  </ul>
+</section>

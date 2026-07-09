@@ -1,0 +1,11 @@
+uuid: 22c2bdad-c82f-473c-9676-932ce9696cad
+langcode: en
+status: true
+dependencies: {  }
+name: Session
+type: session
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

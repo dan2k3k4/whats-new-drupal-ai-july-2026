@@ -1,0 +1,22 @@
+uuid: 49980548-0857-43c6-b067-3bdb672999eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_dashboard
+active_version: e1f12230838ca099
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: admin_menu_links
+        label: 'Admin Menu Links'
+        label_display: '0'
+        provider: ai_dashboard
+    fallback_metadata:
+      slot_definitions: null
+label: 'Admin Menu Links'
+id: block.admin_menu_links
+provider: ai_dashboard
+source: block
+source_local_id: admin_menu_links

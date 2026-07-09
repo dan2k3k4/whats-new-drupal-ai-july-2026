@@ -1,0 +1,53 @@
+uuid: c974b41d-441b-4c12-8088-462f9c4c2fae
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_context.ai_context_item_type.default
+  module:
+    - content_moderation
+id: basic_editorial
+label: Basic
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+    unpublished:
+      label: Unpublished
+      weight: 1
+      published: false
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+      to: published
+      weight: 1
+    unpublish:
+      label: Unpublish
+      from:
+        - published
+      to: unpublished
+      weight: 2
+  entity_types:
+    ai_context_item:
+      - default
+  default_moderation_state: draft

@@ -1,0 +1,128 @@
+uuid: 74aaa4a3-0aeb-4662-b60c-0c433e85a44b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_length
+    - field.storage.node.field_level
+    - field.storage.node.field_organisation
+    - field.storage.node.field_role
+    - field.storage.node.field_room
+    - field.storage.node.field_speakers
+    - field.storage.node.field_track
+    - search_api.server.driftwood_vdb
+  module:
+    - node
+    - taxonomy
+id: driftwood_content
+name: 'Driftwood camp content'
+description: null
+read_only: false
+field_settings:
+  body:
+    label: body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_length:
+    label: field_length
+    datasource_id: 'entity:node'
+    property_path: 'field_length:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_length
+      module:
+        - taxonomy
+  field_level:
+    label: field_level
+    datasource_id: 'entity:node'
+    property_path: 'field_level:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_level
+      module:
+        - taxonomy
+  field_organisation:
+    label: field_organisation
+    datasource_id: 'entity:node'
+    property_path: field_organisation
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_organisation
+  field_role:
+    label: field_role
+    datasource_id: 'entity:node'
+    property_path: field_role
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_role
+  field_room:
+    label: field_room
+    datasource_id: 'entity:node'
+    property_path: field_room
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_room
+  field_speakers:
+    label: field_speakers
+    datasource_id: 'entity:node'
+    property_path: 'field_speakers:entity:title'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_speakers
+      module:
+        - node
+  field_track:
+    label: field_track
+    datasource_id: 'entity:node'
+    property_path: 'field_track:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_track
+      module:
+        - taxonomy
+  title:
+    label: title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - session
+        - speaker
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: driftwood_vdb

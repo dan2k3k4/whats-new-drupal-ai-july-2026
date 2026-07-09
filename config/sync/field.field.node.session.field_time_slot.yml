@@ -1,0 +1,21 @@
+uuid: 7b2cecc7-af73-434d-b151-e144050cadb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_slot
+    - node.type.session
+  module:
+    - datetime
+id: node.session.field_time_slot
+field_name: field_time_slot
+entity_type: node
+bundle: session
+label: 'Time slot'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

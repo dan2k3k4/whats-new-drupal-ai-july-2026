@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * @file
+ * Display tweaks for the Driftwood TechCamp demo.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\ai_agents\PluginInterfaces\AiAgentInterface;
+use Drupal\ai_agents\Task\Task;
+use Drupal\node\NodeInterface;
+
+/**
+ * Maps rewrite agent IDs to the session fields they fill.
+ */
+const DRIFTWOOD_DEMO_REWRITE_AGENTS = [
+  'rewrite_nontech' => 'field_summary_nontech',
+  'rewrite_expert' => 'field_summary_expert',
+];
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for node.
+ *
+ * Fills empty audience summary fields on sessions via the CCC-wired rewrite
+ * agents. Only empty fields are touched, so clearing a field and saving is
+ * the "regenerate" gesture, and ordinary edits don't pay for LLM calls.
+ */
+function driftwood_demo_node_presave(NodeInterface $node): void {
+  if ($node->bundle() !== 'session' || empty($node->body->value)) {
+    return;
+  }
+  foreach (DRIFTWOOD_DEMO_REWRITE_AGENTS as $agent_id => $field) {
+    if (!$node->get($field)->isEmpty()) {
+      continue;
+    }
+    // Two sequential LLM calls can exceed the default execution limit.
+    set_time_limit(120);
+    try {
+      $text = driftwood_demo_generate_summary($node, $agent_id);
+    }
+    catch (\Throwable $e) {
+      \Drupal::logger('driftwood_demo')->error('Summary agent @agent failed for @title: @msg', [
+        '@agent' => $agent_id,
+        '@title' => $node->label(),
+        '@msg' => $e->getMessage(),
+      ]);
+      continue;
+    }
+    if ($text) {
+      $node->set($field, ['value' => $text, 'format' => 'basic_html']);
+      \Drupal::messenger()->addStatus(t('Generated %field with the @agent agent.', [
+        '%field' => $node->getFieldDefinition($field)->getLabel(),
+        '@agent' => $agent_id,
+      ]));
+    }
+  }
+}
+
+/**
+ * Runs a rewrite agent for a session node and returns the tailored summary.
+ *
+ * CCC injects the audience persona (always_include) and global brand voice
+ * into the agent's system prompt. Note: CCC filters context items by view
+ * access, so the acting user must be able to view AI context items.
+ */
+function driftwood_demo_generate_summary(NodeInterface $node, string $agent_id): ?string {
+  $task = new Task(sprintf(
+    "Rewrite this session description for your audience.\n\nTitle: %s\nTrack: %s\nExperience level: %s\nLength: %s\n\nOriginal description:\n%s",
+    $node->label(),
+    $node->field_track->entity?->label(),
+    $node->field_level->entity?->label(),
+    $node->field_length->entity?->label(),
+    $node->body->value,
+  ));
+  $manager = \Drupal::service('plugin.manager.ai_agents');
+  $agent = $manager->createInstance($agent_id, $manager->getDefinition($agent_id));
+  $agent->setTask($task);
+  $agent->setAiProvider(\Drupal::service('ai.provider')->createInstance('amazeeio'));
+  $agent->setModelName('claude-4-6-sonnet');
+  $agent->setCreateDirectly(TRUE);
+  $agent->setUserInterface('driftwood_rewrite');
+  $status = $agent->determineSolvability();
+  $text = match ($status) {
+    AiAgentInterface::JOB_SOLVABLE => $agent->solve(),
+    AiAgentInterface::JOB_SHOULD_ANSWER_QUESTION => $agent->answerQuestion(),
+    default => NULL,
+  };
+  return $text ? trim($text) : NULL;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function driftwood_demo_page_attachments(array &$attachments): void {
+  $attachments['#attached']['library'][] = 'driftwood_demo/base';
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter() for node.
+ *
+ * Wraps the audience summaries in native <details> toggles on session pages.
+ */
+function driftwood_demo_node_view_alter(array &$build, NodeInterface $node, EntityViewDisplayInterface $display): void {
+  if ($node->bundle() !== 'session' || !in_array($display->getMode(), ['full', 'default'])) {
+    return;
+  }
+  $labels = [
+    'field_summary_nontech' => t('🌱 Explain it without the jargon'),
+    'field_summary_expert' => t('🔬 The expert take: should you attend?'),
+  ];
+  foreach ($labels as $field => $label) {
+    if (empty($build[$field])) {
+      continue;
+    }
+    $build[$field]['#label_display'] = 'hidden';
+    $build[$field] = [
+      '#type' => 'details',
+      '#title' => $label,
+      '#open' => FALSE,
+      '#weight' => $build[$field]['#weight'] ?? 10,
+      'content' => $build[$field],
+    ];
+  }
+}

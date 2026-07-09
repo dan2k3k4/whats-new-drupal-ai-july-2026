@@ -1,0 +1,9 @@
+<section class="dw-hero"{% if image %} style="background-image: url('{{ image }}')"{% endif %}>
+  <div class="dw-hero__scrim">
+    {% if badge %}<span class="dw-hero__badge">{{ badge }}</span>{% endif %}
+    <h1 class="dw-hero__title">{{ title }}</h1>
+    {% if subtitle %}<p class="dw-hero__subtitle">{{ subtitle }}</p>{% endif %}
+    {% if cta_text and cta_url %}<a class="dw-hero__cta" href="{{ cta_url }}">{{ cta_text }}</a>{% endif %}
+  </div>
+  <svg class="dw-hero__wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0,26 C240,52 480,0 720,20 C960,40 1200,6 1440,30 L1440,48 L0,48 Z" fill="currentColor"/></svg>
+</section>

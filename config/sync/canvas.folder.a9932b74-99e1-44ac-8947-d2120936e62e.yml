@@ -1,0 +1,17 @@
+uuid: a9932b74-99e1-44ac-8947-d2120936e62e
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.views_block.dashboard_content-block_edited_content
+    - canvas.component.block.views_block.dashboard_content-block_own_drafts
+    - canvas.component.block.views_block.dashboard_content-block_own_recent_content
+    - canvas.component.block.views_block.dashboard_content-block_site_content
+name: 'Content Management'
+configEntityTypeId: component
+weight: 0
+items:
+  - block.views_block.dashboard_content-block_edited_content
+  - block.views_block.dashboard_content-block_own_drafts
+  - block.views_block.dashboard_content-block_own_recent_content
+  - block.views_block.dashboard_content-block_site_content

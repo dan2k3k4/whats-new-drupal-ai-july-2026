@@ -1,0 +1,13 @@
+uuid: 87d004a3-ac59-40d3-976f-e883da847b5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.dashboard_site_status
+    - canvas.component.block.navigation_dashboard
+name: Dashboard
+configEntityTypeId: component
+weight: 0
+items:
+  - block.dashboard_site_status
+  - block.navigation_dashboard

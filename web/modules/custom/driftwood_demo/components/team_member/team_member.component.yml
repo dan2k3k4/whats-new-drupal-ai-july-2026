@@ -1,0 +1,30 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Team member'
+description: 'Organiser/team profile row with an initials avatar, name, role, organisation and a one-line bio. Stack several to build the team section.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - name
+    - role
+  properties:
+    name:
+      type: string
+      title: Name
+      examples:
+        - 'Rosa Lindgren'
+    role:
+      type: string
+      title: Role
+      examples:
+        - 'Venue & Operations'
+    org:
+      type: string
+      title: Organisation
+      examples:
+        - 'Driftwood Lodge'
+    bio:
+      type: string
+      title: 'One-line bio'
+      examples:
+        - 'Knows where every extension cord, spare chair and second coffee urn lives.'

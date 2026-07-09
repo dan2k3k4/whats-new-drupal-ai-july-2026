@@ -1,0 +1,24 @@
+uuid: 82713319-b941-481b-87c8-e3f254ed0cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_level
+    - node.type.session
+    - taxonomy.vocabulary.level
+id: node.session.field_level
+field_name: field_level
+entity_type: node
+bundle: session
+label: 'Experience level'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      level: level
+field_type: entity_reference

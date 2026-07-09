@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function node_exclude_by_region_views_data_alter(array &$data)
+{
+  // Add the custom filter to the node table.
+  $data['node_field_data']['node_region_access_filter'] = [
+    'title' => t('Node Region Access Filter'),
+    'help' => t('Filters nodes based on region access.'),
+    'filter' => [
+      'id' => 'node_region_access_filter',
+    ],
+  ];
+}

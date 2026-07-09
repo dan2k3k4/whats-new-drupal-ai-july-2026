@@ -1,0 +1,122 @@
+uuid: 3a4ebb80-557e-40e3-a007-2c4d6267d661
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+    - link
+    - options
+active_version: d2ba05f012251260
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        icon:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: flame
+          expression: ℹ︎list_string␟value
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Hands-on workshops'
+          expression: ℹ︎string␟value
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Build a working AI chatbot, contribute your first patch, and more — laptops out, mentors on hand.'
+          expression: ℹ︎string␟value
+        link_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'See all workshops'
+          expression: ℹ︎string␟value
+        link_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /search
+              options: {  }
+          expression: ℹ︎link␟url
+    fallback_metadata:
+      slot_definitions: {  }
+  a85901f5b1ed61d3:
+    settings:
+      prop_field_definitions:
+        title:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Hands-on workshops'
+          expression: ℹ︎string␟value
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Build a working AI chatbot, contribute your first patch, and more — laptops out, mentors on hand.'
+          expression: ℹ︎string␟value
+        link_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'See all workshops'
+          expression: ℹ︎string␟value
+        link_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /search
+              options: {  }
+          expression: ℹ︎link␟url
+    fallback_metadata:
+      slot_definitions: {  }
+label: Card
+id: sdc.driftwood_demo.card
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:card'

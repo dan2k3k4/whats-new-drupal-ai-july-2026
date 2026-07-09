@@ -1,0 +1,47 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Feature
+description: 'Split section: photo on one side, heading and text on the other. Alternate image_right between consecutive features for a zig-zag rhythm.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - heading
+    - image
+  properties:
+    heading:
+      type: string
+      title: Heading
+      examples:
+        - 'Evenings by the fire'
+    text:
+      type: string
+      title: Text
+      examples:
+        - 'When the laptops close, the campfire opens. Lightning talks, honest war stories and marshmallows — the hallway track, but warmer.'
+    image:
+      type: string
+      title: Photo
+      description: 'dawn.jpg = sunrise over mountains (epic, calm). campfire.jpg = campers around a night fire (community, evenings). tent.jpg = view from inside a tent into forest (venue, atmosphere). laptops.jpg = three people laughing at laptops (workshops, learning). conference.jpg = audience at a talk (sessions, programme).'
+      enum:
+        - /modules/custom/driftwood_demo/images/dawn.jpg
+        - /modules/custom/driftwood_demo/images/campfire.jpg
+        - /modules/custom/driftwood_demo/images/tent.jpg
+        - /modules/custom/driftwood_demo/images/laptops.jpg
+        - /modules/custom/driftwood_demo/images/conference.jpg
+      examples:
+        - /modules/custom/driftwood_demo/images/campfire.jpg
+    image_right:
+      type: boolean
+      title: 'Image on the right'
+      default: false
+    link_text:
+      type: string
+      title: 'Link text'
+      examples:
+        - 'See the evening programme'
+    link_url:
+      type: string
+      title: 'Link URL'
+      format: uri-reference
+      examples:
+        - '/search'

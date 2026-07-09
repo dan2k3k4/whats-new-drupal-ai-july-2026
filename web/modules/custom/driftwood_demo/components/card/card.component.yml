@@ -1,0 +1,43 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Card
+description: 'Content card with icon, title, text and optional link. Works best in rows of three.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - title
+  properties:
+    icon:
+      type: string
+      title: Icon
+      description: 'Pick the icon matching the content: tent (camp/venue), flame (campfire/energy), code (development), compass (guidance/tracks), search (finding things), users (community/people).'
+      enum:
+        - tent
+        - flame
+        - code
+        - compass
+        - search
+        - users
+      examples:
+        - flame
+    title:
+      type: string
+      title: Title
+      examples:
+        - 'Hands-on workshops'
+    text:
+      type: string
+      title: Text
+      examples:
+        - 'Build a working AI chatbot, contribute your first patch, and more — laptops out, mentors on hand.'
+    link_text:
+      type: string
+      title: 'Link text'
+      examples:
+        - 'See all workshops'
+    link_url:
+      type: string
+      title: 'Link URL'
+      format: uri-reference
+      examples:
+        - '/search'

@@ -1,0 +1,50 @@
+.dw-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  max-width: 46rem;
+  margin: 1rem auto;
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  background: var(--dw-sand, #f2ead9);
+  color: var(--dw-ink, #26221c);
+}
+.dw-card__icon {
+  flex: 0 0 3rem;
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.6rem;
+  border-radius: 999px;
+  background: var(--dw-pine, #173b3f);
+  color: var(--dw-sand, #f2ead9);
+}
+@media (max-width: 500px) {
+  .dw-card {
+    flex-direction: column;
+  }
+}
+.dw-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.dw-card__title {
+  margin: 0 0 0.5rem;
+  font-family: var(--dw-display, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--dw-pine, #173b3f);
+}
+.dw-card__text {
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+.dw-card__link {
+  color: var(--dw-ember, #e4572e);
+  font-weight: 700;
+  text-decoration: none;
+}
+.dw-card__link:hover,
+.dw-card__link:focus {
+  text-decoration: underline;
+}

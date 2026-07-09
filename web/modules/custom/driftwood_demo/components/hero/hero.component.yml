@@ -1,0 +1,48 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Hero
+description: 'Full-bleed photographic hero with title, subtitle, date-stamp badge and call-to-action. Use exactly once, at the top of the page.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      title: Title
+      examples:
+        - 'Driftwood TechCamp 2026'
+    subtitle:
+      type: string
+      title: Subtitle
+      examples:
+        - 'Three days of talks, workshops and campfires by the lake.'
+    badge:
+      type: string
+      title: 'Stamp badge'
+      description: 'Very short stamp text, e.g. dates and place. Keep under 30 characters.'
+      examples:
+        - '16–18 Sept · on the lake'
+    image:
+      type: string
+      title: 'Background photo'
+      description: 'dawn.jpg = sunrise over mountains and clouds (calm, epic — best default). campfire.jpg = campers around a night fire. tent.jpg = view out of a tent into forest. laptops.jpg = three people laughing at laptops. conference.jpg = audience at a talk.'
+      enum:
+        - /modules/custom/driftwood_demo/images/dawn.jpg
+        - /modules/custom/driftwood_demo/images/campfire.jpg
+        - /modules/custom/driftwood_demo/images/tent.jpg
+        - /modules/custom/driftwood_demo/images/laptops.jpg
+        - /modules/custom/driftwood_demo/images/conference.jpg
+      examples:
+        - /modules/custom/driftwood_demo/images/dawn.jpg
+    cta_text:
+      type: string
+      title: 'Button text'
+      examples:
+        - 'Browse the programme'
+    cta_url:
+      type: string
+      title: 'Button URL'
+      format: uri-reference
+      examples:
+        - '/search'

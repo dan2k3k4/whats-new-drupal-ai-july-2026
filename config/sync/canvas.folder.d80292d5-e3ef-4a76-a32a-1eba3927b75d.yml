@@ -1,0 +1,23 @@
+uuid: d80292d5-e3ef-4a76-a32a-1eba3927b75d
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.driftwood_demo.card
+    - canvas.component.sdc.driftwood_demo.cta_banner
+    - canvas.component.sdc.driftwood_demo.feature
+    - canvas.component.sdc.driftwood_demo.hero
+    - canvas.component.sdc.driftwood_demo.section_heading
+    - canvas.component.sdc.driftwood_demo.sponsors
+    - canvas.component.sdc.driftwood_demo.team_member
+name: Driftwood
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.driftwood_demo.card
+  - sdc.driftwood_demo.cta_banner
+  - sdc.driftwood_demo.feature
+  - sdc.driftwood_demo.hero
+  - sdc.driftwood_demo.section_heading
+  - sdc.driftwood_demo.sponsors
+  - sdc.driftwood_demo.team_member

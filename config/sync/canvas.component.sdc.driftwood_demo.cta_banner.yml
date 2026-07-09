@@ -1,0 +1,62 @@
+uuid: 3645d9a3-ddb9-40f9-b6c4-6a8889dbf410
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+    - link
+active_version: 9f469d744e56e344
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Pack your laptop. We'll bring the lake."
+          expression: ℹ︎string␟value
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Tickets are limited to keep the camp feeling like a camp.'
+          expression: ℹ︎string␟value
+        cta_text:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Browse the programme'
+          expression: ℹ︎string␟value
+        cta_url:
+          required: true
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /search
+              options: {  }
+          expression: ℹ︎link␟url
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'CTA banner'
+id: sdc.driftwood_demo.cta_banner
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:cta_banner'

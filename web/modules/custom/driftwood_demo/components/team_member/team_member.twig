@@ -1,0 +1,9 @@
+{% set initials = name|split(' ')|map(w => w|first)|slice(0, 2)|join|upper %}
+<article class="dw-team-member">
+  <span class="dw-team-member__avatar" aria-hidden="true">{{ initials }}</span>
+  <div class="dw-team-member__body">
+    <h3 class="dw-team-member__name">{{ name }}</h3>
+    <p class="dw-team-member__role">{{ role }}{% if org %} · {{ org }}{% endif %}</p>
+    {% if bio %}<p class="dw-team-member__bio">{{ bio }}</p>{% endif %}
+  </div>
+</article>

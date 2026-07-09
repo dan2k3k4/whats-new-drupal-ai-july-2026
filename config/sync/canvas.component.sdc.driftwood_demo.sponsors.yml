@@ -1,0 +1,98 @@
+uuid: 3a87d7dd-4993-4350-bfd5-96d16f11fd0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+active_version: a8ccf6a5be3d54d7
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Made possible by'
+          expression: ℹ︎string␟value
+        intro:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'The camp keeps ticket prices low because these fine folks chip in.'
+          expression: ℹ︎string␟value
+        sponsor1:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Pinewood Cloud'
+          expression: ℹ︎string␟value
+        sponsor2:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Loon Analytics'
+          expression: ℹ︎string␟value
+        sponsor3:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Ember & Oak Consulting'
+          expression: ℹ︎string␟value
+        sponsor4:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Lakeside Hosting Co.'
+          expression: ℹ︎string␟value
+        sponsor5:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Portage Software'
+          expression: ℹ︎string␟value
+        sponsor6:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Firefly Devtools'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: Sponsors
+id: sdc.driftwood_demo.sponsors
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:sponsors'

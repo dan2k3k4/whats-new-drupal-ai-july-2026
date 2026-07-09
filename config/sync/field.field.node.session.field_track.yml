@@ -1,0 +1,24 @@
+uuid: 88469e55-d5b0-4ac4-b7ab-a4b4664e958b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_track
+    - node.type.session
+    - taxonomy.vocabulary.track
+id: node.session.field_track
+field_name: field_track
+entity_type: node
+bundle: session
+label: Track
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      track: track
+field_type: entity_reference

@@ -1,0 +1,27 @@
+uuid: 6b59cce6-b8e5-4837-bdbb-eb57b805a636
+langcode: en
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: publish
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: true
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+_core:
+  default_config_hash: MoYg5BC7TB6nqrUvwKC6Nfl9IugzdJgkHggUsWodAPQ
+id: default
+label: Default
+description: 'Default AI Context Item Type.'
+new_revision: true
+default_status: true

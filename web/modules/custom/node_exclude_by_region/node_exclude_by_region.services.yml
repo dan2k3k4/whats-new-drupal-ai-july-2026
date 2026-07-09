@@ -1,0 +1,13 @@
+services:
+  node_exclude_by_region.node_access_control_handler:
+    class: Drupal\node_exclude_by_region\NodeAccessControlHandler
+    arguments: [ '@entity_type.manager', '@entity.repository', '@language_manager', '@current_user', '@module_handler' ]
+    tags:
+      - { name: entity_type_access_control_handler, entity_type: node }
+  node_exclude_by_region.node_region_access_check:
+    class: Drupal\node_exclude_by_region\NodeRegionAccessCheck
+    arguments: []
+  node_exclude_by_region.route_subscriber:
+    class: Drupal\node_exclude_by_region\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

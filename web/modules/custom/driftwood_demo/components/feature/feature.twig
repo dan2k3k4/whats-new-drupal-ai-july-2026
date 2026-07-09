@@ -1,0 +1,10 @@
+<section class="dw-feature{{ image_right ? ' dw-feature--reversed' }}">
+  <div class="dw-feature__media">
+    <img src="{{ image }}" alt="" loading="lazy">
+  </div>
+  <div class="dw-feature__body">
+    <h2 class="dw-feature__heading">{{ heading }}</h2>
+    {% if text %}<p class="dw-feature__text">{{ text }}</p>{% endif %}
+    {% if link_text and link_url %}<a class="dw-feature__link" href="{{ link_url }}">{{ link_text }} →</a>{% endif %}
+  </div>
+</section>

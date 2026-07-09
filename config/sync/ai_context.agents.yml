@@ -1,0 +1,17 @@
+_core:
+  default_config_hash: x6RSyMWd1iQYhYS3zBLWYbRgqKfghEjz5rbA025_uJo
+agents:
+  -
+    id: rewrite_nontech
+    always_include:
+      - '2'
+    never_include: {  }
+    loop_aware: false
+    scope_subscriptions: {  }
+  -
+    id: rewrite_expert
+    always_include:
+      - '3'
+    never_include: {  }
+    loop_aware: false
+    scope_subscriptions: {  }

@@ -1,0 +1,11 @@
+uuid: baed6a36-354f-4d9c-baf5-e2bea902bd85
+langcode: en
+status: true
+dependencies: {  }
+name: Blog
+type: blog
+description: 'A content type for blog posts.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,33 @@
+.dw-section-heading {
+  text-align: center;
+  margin: 3.5rem auto 1.5rem;
+  max-width: 44rem;
+  padding: 0 1rem;
+}
+.dw-section-heading__kicker {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dw-ember, #e4572e);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.dw-section-heading__heading {
+  margin: 0 0 0.5rem;
+  font-family: var(--dw-display, Georgia, serif);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--dw-pine, #173b3f);
+}
+.dw-section-heading__wave {
+  width: 120px;
+  height: 12px;
+  color: var(--dw-ember, #e4572e);
+}
+.dw-section-heading__lead {
+  margin: 0.75rem auto 0;
+  max-width: 44ch;
+  color: #58524a;
+  line-height: 1.6;
+}

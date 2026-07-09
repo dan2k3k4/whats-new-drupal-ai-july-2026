@@ -1,0 +1,32 @@
+uuid: 339aae89-1a62-4e29-aeb9-31a69b381316
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_chatbot
+  theme:
+    - olivero
+id: campassistantchatbot
+theme: olivero
+region: content_below
+weight: 10
+provider: null
+plugin: ai_chatbot_block
+settings:
+  id: ai_chatbot_block
+  label: 'Ask the camp assistant'
+  label_display: '0'
+  provider: ai_chatbot
+  ai_assistant: camp_assistant
+  bot_name: 'Camp Assistant'
+  bot_image: /core/misc/druplicon.png
+  use_username: 0
+  default_username: Camper
+  use_avatar: 0
+  default_avatar: /core/misc/favicon.ico
+  first_message: 'Hi camper! Ask me anything about the Driftwood TechCamp programme.'
+  stream: 1
+  toggle_state: remember
+  output_type: markdown
+  show_structured_results: false
+visibility: {  }

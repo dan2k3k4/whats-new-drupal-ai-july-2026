@@ -1,0 +1,19 @@
+uuid: c20f2741-f8dc-41ee-a6f3-79ff987b4dac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organisation
+    - node.type.speaker
+id: node.speaker.field_organisation
+field_name: field_organisation
+entity_type: node
+bundle: speaker
+label: Organisation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

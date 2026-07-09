@@ -1,0 +1,21 @@
+uuid: f80bae78-2d54-4c47-854a-01332d0efbbe
+langcode: en
+status: true
+dependencies: {  }
+id: camp_assistant
+label: 'Camp programme assistant'
+description: 'RAG chatbot over the camp programme.'
+system_prompt: ''
+pre_action_prompt: ''
+instructions: ''
+allow_history: session
+history_context_length: '2'
+error_message: 'Sorry, something went wrong — try asking again.'
+specific_error_messages: null
+llm_provider: amazeeio
+llm_model: claude-4-6-sonnet
+llm_configuration: {  }
+actions_enabled: {  }
+roles: {  }
+use_function_calling: true
+ai_agent: camp_assistant

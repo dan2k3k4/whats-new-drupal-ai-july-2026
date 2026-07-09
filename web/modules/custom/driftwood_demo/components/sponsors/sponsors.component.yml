@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Sponsors
+description: 'Sponsor strip: heading, optional intro line, and up to six sponsor wordmarks in a wrapped row. Use once per page.'
+group: Driftwood
+props:
+  type: object
+  required:
+    - heading
+    - sponsor1
+  properties:
+    heading:
+      type: string
+      title: Heading
+      examples:
+        - 'Made possible by'
+    intro:
+      type: string
+      title: 'Intro line'
+      examples:
+        - 'The camp keeps ticket prices low because these fine folks chip in.'
+    sponsor1:
+      type: string
+      title: 'Sponsor 1'
+      examples:
+        - 'Pinewood Cloud'
+    sponsor2:
+      type: string
+      title: 'Sponsor 2'
+      examples:
+        - 'Loon Analytics'
+    sponsor3:
+      type: string
+      title: 'Sponsor 3'
+      examples:
+        - 'Ember & Oak Consulting'
+    sponsor4:
+      type: string
+      title: 'Sponsor 4'
+      examples:
+        - 'Lakeside Hosting Co.'
+    sponsor5:
+      type: string
+      title: 'Sponsor 5'
+      examples:
+        - 'Portage Software'
+    sponsor6:
+      type: string
+      title: 'Sponsor 6'
+      examples:
+        - 'Firefly Devtools'

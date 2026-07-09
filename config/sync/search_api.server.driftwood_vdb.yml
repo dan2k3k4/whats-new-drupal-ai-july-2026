@@ -1,0 +1,30 @@
+uuid: e9a97fd9-b9ec-42ee-807f-f72ddb401c9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_provider_amazeeio.settings
+  module:
+    - ai_provider_amazeeio
+    - ai_search
+id: driftwood_vdb
+name: 'Driftwood vector DB (amazee.ai)'
+description: ''
+backend: search_api_ai_search
+backend_config:
+  chat_model: amazeeio__claude-4-6-sonnet
+  database: amazeeio_vector_db
+  database_settings:
+    database_name: db_1a3d35ee
+    collection: driftwood_camp
+    metric: cosine_similarity
+  embeddings_engine: 'amazeeio__titan-embed-text-v2:0'
+  embeddings_engine_configuration:
+    set_dimensions: false
+    dimensions: 1024
+  embedding_strategy: contextual_chunks
+  embedding_strategy_configuration:
+    chunk_size: '500'
+    chunk_min_overlap: '100'
+    contextual_content_max_percentage: '30'
+  include_raw_embedding_vector: false

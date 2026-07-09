@@ -1,0 +1,58 @@
+uuid: ff706f6c-366d-476a-8630-d5911297f0d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+active_version: 93d646f093838772
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        name:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Rosa Lindgren'
+          expression: ℹ︎string␟value
+        role:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Venue & Operations'
+          expression: ℹ︎string␟value
+        org:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Driftwood Lodge'
+          expression: ℹ︎string␟value
+        bio:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Knows where every extension cord, spare chair and second coffee urn lives.'
+          expression: ℹ︎string␟value
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Team member'
+id: sdc.driftwood_demo.team_member
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:team_member'

@@ -1,0 +1,82 @@
+uuid: df321ce4-fbbc-4420-a52d-425b97f222d8
+langcode: en
+status: true
+dependencies:
+  module:
+    - driftwood_demo
+    - link
+    - options
+active_version: c6c23e7e024d22aa
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Evenings by the fire'
+          expression: ℹ︎string␟value
+        text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'When the laptops close, the campfire opens. Lightning talks, honest war stories and marshmallows — the hallway track, but warmer.'
+          expression: ℹ︎string␟value
+        image:
+          required: true
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: /modules/custom/driftwood_demo/images/campfire.jpg
+          expression: ℹ︎list_string␟value
+        image_right:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value: null
+          expression: ℹ︎boolean␟value
+        link_text:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'See the evening programme'
+          expression: ℹ︎string␟value
+        link_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /search
+              options: {  }
+          expression: ℹ︎link␟url
+    fallback_metadata:
+      slot_definitions: {  }
+label: Feature
+id: sdc.driftwood_demo.feature
+provider: driftwood_demo
+source: sdc
+source_local_id: 'driftwood_demo:feature'

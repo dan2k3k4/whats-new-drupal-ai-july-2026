@@ -1,0 +1,28 @@
+uuid: c18fb957-4c8e-42b5-be2d-18328cfde1eb
+langcode: en
+status: true
+dependencies: {  }
+id: rewrite_nontech
+label: 'Session rewriter: non-technical'
+description: "Rewrites session descriptions into field_summary_nontech for the 'Audience: Non-technical attendee' persona."
+system_prompt: |-
+  You rewrite conference session descriptions for a specific audience. The audience persona and the site's brand voice are provided as additional context — follow both exactly.
+
+  You will be given a session's title, track, experience level, length and original description. Write the audience-tailored version as instructed by the persona, including the honest should-you-attend guidance based on the session's experience level versus the reader's expertise.
+
+  Respond with ONLY the rewritten paragraph. No headings, no preamble, no quotation marks, no markdown.
+secured_system_prompt: '[ai_agent:agent_instructions]'
+tools: {  }
+tool_settings: {  }
+orchestration_agent: false
+triage_agent: false
+max_loops: 3
+max_loops_message: null
+default_information_tools: ''
+tool_usage_limits: {  }
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''
